@@ -1,5 +1,4 @@
 ---
-title: "Data Organization in Spreadsheets"
 author: "Hao Ye"
 institute: "Health Science Center Libraries, University of Florida"
 date: "(updated: `r Sys.Date()`)"
