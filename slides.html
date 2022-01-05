@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Data Organization in Spreadsheets</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Hao Ye" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: inverse, center, middle
+
+# Data Organization in Spreadsheets
+### Hao Ye
+### Health Science Center Libraries, University of Florida
+### (updated: 2022-01-05)
+
+---
+
+# Motivations
+
+Why should you care about this topic?
+
+--
+
+Organizing your projects and data will:
+* improve reproducibility
+* enable you to scale up projects
+* make it easier to build off it later
+--
+
+  **this includes yourself at a later point!**
+
+---
+
+# Learning Outcomes
+
+By the end of the workshop, participants will be able to:
+
+* implement recommended practices for file and folder organization in projects
+* use and apply file naming conventions
+* understand the principles of tidy data for structuring tabular data
+
+---
+class: inverse, center, middle
+
+# File and Folder Organization
+
+---
+
+# Principles
+
+* You don't want to spend time looking for stuff.
+  Neither do your collaborators.
+* Keep all files associated with a project in **one** place.
+  - project description
+  - data
+  - code
+  - figures
+  - manuscript
+
+---
+
+# Practices
+
+* Use sub-folders to organize data, figures, manuscript, etc.
+  - separate raw and processed data
+* Use `README` files to document:
+  - who did the experiments
+  - data formatting
+    (more on this later)
+  - when/how/why
+
+---
+
+# Structuring a Project Folder
+
+&lt;pre class = "hljs remark-code"&gt;
+project/
+├── data/
+├── figures/
+├── output/
+├── paper/
+├── R/
+└── README.md
+&lt;/pre&gt;
+
+--
+* more examples in [Marwick et al. 2018 "Packaging Data Analytical Work Reproducibly Using R (and Friends)"](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986)
+
+---
+# A Project README
+
+* short summary of project &amp; goals
+* guidance for interacting with the project
+  - (software) how to install and run it
+  - (paper) which file is the final report/paper
+  - (data) the summary figure or main file
+* description of folders (if non-standard)
+* funding acknowledgments / how to cite
+
+---
+
+# Where to store projects
+
+&lt;pre class = "hljs remark-code"&gt;
+hye/
+├── grants/
+├── presentations_and_travel/
+├── projects/
+├── teaching/
+├── vitae/
+└── websites/
+&lt;/pre&gt;
+--
+
+* find similar types of projects in the same place  
+  (easier to copy-paste from existing projects)
+
+---
+# Summary
+
+* store project files and **project information** together in the same place
+* make the project easy to engage with
+  - you don't need to document everything, someone invested in the details will seek you out
+  
+---
+class: inverse, center, middle
+
+# Naming Things
+
+---
+
+# Principles
+
+Choose file names that:
+* are machine-readable
+* are human-readable
+* sort nicely
+
+---
+
+# Examples (NOT SO GOOD)
+
+&lt;pre class = "hljs remark-code"&gt;
+Hao's data with spaces &amp; punctuation.xlsx
+01.R
+figure 1.png
+fig 2.jpg
+report-final FINAL HY-comments ver3.docx
+&lt;/pre&gt;
+
+---
+
+# Examples (BETTER)
+
+&lt;pre class = "hljs remark-code"&gt;
+hao_learned_about_underscores.xlsx
+01_import-data.R
+fig01_scatterplot_length-vs-interest.png
+fig02_histogram_talk-attendance.png
+yearly-report_2020-06-01_hy-comments.docx
+&lt;/pre&gt;
+
+---
+# Machine-Readable
+
+* Avoid spaces, punctuation, accented characters, mixing CAPS and lowercase.
+  - computers can struggle with these
+  - easier names help people remember!
+* Separate words with hyphens `'-'`
+* Separate groupings with underscores `'_'`
+
+---
+
+# Human-Readable
+
+* Use filenames that will help you find it later.
+* For code, use nouns for data objects and verbs for actions:
+  - `load-data.R`
+  - `data_mtcars.csv`
+  - `make-scatterplot.R`
+
+---
+
+# Using Default Ordering
+
+* Files are sorted alphabetically by default.
+  - we can make use of this!
+* Left-pad with numbers to impose an order on files:
+  - e.g. `01_load-data.R`, `02_process-data.R`
+* Use RFC-3339 for dates:
+  - `YYYY-MM-DD` format (alphabetical sorting makes it chronological, too!)
+
+---
+class: center
+&lt;img src="https://imgs.xkcd.com/comics/iso_8601_2x.png" width="60%" /&gt;
+
+[xkcd/1179](https://xkcd.com/1179/)
+
+---
+
+# Example
+
+&lt;pre class = "hljs remark-code"&gt;
+siteA_2020-04-01_animal-count.xls
+siteA_2020-05-01_animal-count.xls
+siteB_2020-04-01_animal-count.xls
+siteB_2020-04-01_weather.dat
+siteB_2020-05-01_animal-count.xls
+siteB_2020-05-01_weather.dat
+&lt;/pre&gt;
+
+--
+files are organized by site -&gt; date -&gt; type of measurement
+
+---
+
+# Summary
+
+* you probably use names to organize files already!
+  - these tips can help improve your system
+* use a consistent scheme for labeling
+
+---
+class: inverse, center, middle
+
+# Structuring Tabular Data (e.g. spreadsheets)
+
+---
+
+# Principles
+
+Make it easy for anyone to work with your data:
+* Structure data for analysis (i.e. "Tidy Data")
+* Don't use text-formatting to store information!
+* Don't modify raw data
+* Include a Data Dictionary
+
+---
+
+# Tidy Data
+
+Properties of *tidy data*:
+* each column is a variable
+* each row is an observation
+* each table is a single observational unit
+
+---
+
+# Common issues
+
+* data values are stored in column headers
+  - e.g. treatment values, dates of sampling
+* multiple variables are stored in one column
+* variables are stored in rows and columns
+* "1 observational unit = 1 table" is violated
+  - e.g. subject info and measurements are stored in the same table
+
+---
+
+# Example: column labels encoding data
+
+* wide-format data
+
+|name|Thin Mints|Samoas|Tagalongs|
+|--|--|--|--|
+|A|4|0|0|
+|B|2|0|2|
+|c|0|3|1|
+
+---
+
+# Example: re-structured columns
+
+* long-format data
+
+|name|flavor|boxes|
+|--|--|--|
+|A|Thin Mints|4|
+|B|Thin Mints|2|
+|B|Tagalongs|2|
+|C|Samoas|3|
+|C|Tagalongs|1|
+
+---
+
+# Example: multiple observational units
+
+|name|address|flavor|boxes|
+|--|--|--|--|
+|A|3828 Piermont Dr|Thin Mints|4|
+|B|221B Baker St|Thin Mints|2|
+|B|221B Baker St|Tagalongs|2|
+|C|124 Conch St|Samoas|3|
+|C|124 Conch St|Tagalongs|1|
+
+---
+
+# Example: separate tables
+
+.pull-left[
+|name|flavor|boxes|
+|--|--|--|
+|A|Thin Mints|4|
+|B|Thin Mints|2|
+|B|Tagalongs|2|
+|C|Samoas|3|
+|C|Tagalongs|1|
+]
+
+.pull-right[
+|name|address|
+|--|--|
+|A|3828 Piermont Dr|
+|B|221B Baker St|
+|C|124 Conch St|
+]
+
+---
+# Spreadsheet Formatting
+
+* prefer empty cells or `'NA'` for missing data
+  - *be careful about `'NA'` for certain types of data (e.g. country code for "Namibia")*
+* do NOT space out data with empty rows/columns
+* do NOT use text formatting (e.g. bold/italics) to store information
+* WATCH OUT: Excel LOVES to convert data into a date format
+
+---
+# Example: spreadsheet formatting
+
+![Figure 10 from Broman &amp; Woo "Data Organization in Spreadsheets", showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column.](spreadsheet_formatting.png)
+
+Instead of highlighting the cells with outliers, encode outlier status as its own column.
+
+---
+
+# Raw Data
+
+* store raw data for reproducibility
+  - copy and modify files instead
+  - and/or use scripts to clean/wrangle raw data
+* document processing steps in code or text
+  - someone else can see what processing was done, and reproduce it
+  - OpenRefine is a great tool for cleaning messy data (and records the steps for you)!  
+  https://uf-repro.github.io/OpenRefine-intro/
+
+---
+
+# Data Dictionary
+
+* define your rows and columns
+  - e.g. do rows correspond to:
+     + individual subjects
+     + OR data collection sessions
+     + OR individual samples from a measurement device
+* define codes, categories, acronyms
+* define relationships between multiple tables
+* [provide metadata details](https://guides.uflib.ufl.edu/datamanagement/metadata)
+
+---
+
+# Example Data Dictionary
+
+.compact-table[
+|name|plot_name|group|description|type|
+|--|--|--|--|--|
+|mouse|Mouse|demographic|Animal identifier|text|
+|sex|Sex|demographic|Male (M) or Female (F)|factor|
+|sac_date|Date of sac|demographic|Date mouse was sacrificed|date|
+|partial_inflation|Partial inflation|clinical|Indicates if mouse showed partial pancreatic inflation|logical|
+|coat_color|Coat color|demographic|Coat color, by visual inspection|factor|
+|crumblers|Crumblers|clinical|Indicates if mouse stored food in their bedding|logical|
+|diet_days|Days on diet|clinical|Number of days on high-fat diet|numeric|
+]
+
+(modified from Figure 9 of Broman &amp; Woo "Data Organization in Spreadsheets")
+
+---
+
+# Thanks
+
+* Contact me for additional questions or consultation requests!
+* Check back in on the libguide for more modules and contact info:
+  - https://guides.uflib.ufl.edu/reproducibility
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"highlightSpan": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
