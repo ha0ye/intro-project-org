@@ -1,8 +1,8 @@
-title: Data Organization in Spreadsheets and R
+title: Organizing Research Projects for Reproducibility
 
 template:
   params:
-    bootswatch: darkly
+    bootswatch: readable
   assets:
     slides
 
