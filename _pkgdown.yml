@@ -15,6 +15,7 @@ navbar:
       - articles
       - references
      right: 
+      - handout
       - notes
       - slides
       - resources
@@ -28,6 +29,9 @@ navbar:
      home:
        icon: fas fa-home fa-lg
        href: index.html
+     handout:
+       text: Handout
+       href: handout.html
      notes:
        text: Notes
        href: notes.html
