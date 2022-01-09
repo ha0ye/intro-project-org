@@ -52,17 +52,15 @@ class: inverse, center, middle
 
 # Motivations
 
-Why should you care about this topic?
+You will work on projects that are more complex, involve more people, and take more time.
+
+* your project team may change
+* you may pause a project and come back to it later
+* you may want to use parts of the project elsewhere
 
 --
 
-Organizing your projects and data will:
-* improve reproducibility
-* enable you to scale up projects
-* make it easier to build off it later
---
-
-  **this includes yourself at a later point!**
+A consistent organizational plan for your project will help with all these things! (and make your life easier)
 
 ---
 
@@ -82,8 +80,8 @@ class: inverse, center, middle
 # Principles
 
 * You don't want to spend time looking for stuff.
-  Neither do your collaborators.
-* Keep all files associated with a project in **one** place.
+  Neither do your teammates
+* Keep project information in **one** place.
   - project description
   - data
   - code

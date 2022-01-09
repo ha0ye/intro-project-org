@@ -12,11 +12,11 @@ workflow](https://github.com/ha0ye/intro-project-org/workflows/pkgdown/badge.svg
 
 ## Description
 
-This workshop guides researchers on organizing tabular data in order to
-streamline later analysis in Excel, R, or the statistical program of
-their choice. Attendees will gain an understanding of the principles and
-practices in project organization, file naming, and structuring tidy
-data.
+This lesson prepares researchers to manage the digital aspects of their
+projects to: be more efficient, collaborate more easily, and promote
+reproducibility. Attendees will gain an understanding of the principles
+and practices in project organization, file naming, and documenting
+their work.
 
 ## Learning Outcomes
 
@@ -25,4 +25,4 @@ By the end of the workshop, participants will be able to:
 -   implement recommended practices for file and folder organization in
     projects
 -   use and apply file naming conventions
--   understand the principles of tidy data for structuring tabular data
+-   understand the principles for metadata documentation

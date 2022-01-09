@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "hao.ye@weecology.org",
            comment = c(ORCID = "0000-0002-8630-1458"))
-Description: This workshop guides researchers on organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of their choice. Attendees will gain an understanding of the principles and practices in project organization, file naming, and structuring tidy data.
+Description: This lesson prepares researchers to manage the digital aspects of their projects to: be more efficient, collaborate more easily, and promote reproducibility. Attendees will gain an understanding of the principles and practices in project organization, file naming, and documenting their work.
 License: CC BY 4.0
 Imports:
     dplyr, 
@@ -27,4 +27,4 @@ Depends:
     R (>= 2.10)
 learningOutcomes: * implement recommended practices for file and folder organization in projects
  * use and apply file naming conventions
- * understand the principles of tidy data for structuring tabular data
+ * understand the principles for metadata documentation

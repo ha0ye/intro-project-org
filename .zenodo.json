@@ -7,12 +7,12 @@
       "orcid": "0000-0002-8630-1458"
     }
   ],
-  "description": "This workshop guides researchers on organizing tabular data in order to streamline later analysis in Excel, R, or the statistical program of their choice. Attendees will gain an understanding of the principles and practices in project organization, file naming, and structuring tidy data.",
+  "description": "This lesson prepares researchers to manage the digital aspects of their projects to: be more efficient, collaborate more easily, and promote reproducibility. Attendees will gain an understanding of the principles and practices in project organization, file naming, and documenting their work.",
   "keywords": [
     "Open Educational Resources",
     "Research Support Skills",
     "Research Data Management",
-    "Spreadsheet",
+    "Metadata",
     "Workshop",
     "Data"
   ],
