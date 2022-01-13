@@ -227,12 +227,59 @@ files are organized by site -&gt; date -&gt; data type</li>
 <li>who and when is this project being done</li>
 </ul></li>
 </ul></li>
-</ul></div>
-<div class="section level2">
-<h2 id="documenting-for-reproducibility">Documenting for Reproducibility<a class="anchor" aria-label="anchor" href="#documenting-for-reproducibility"></a></h2>
-<ul><li>Motivations
+<li>Structuring Tabular Data (e.g. spreadsheets)</li>
+<li>Principles Make it easy for anyone to work with your data:
+<ul><li>Structure data for analysis (i.e. “Tidy Data”)</li>
+<li>Don’t use text-formatting to store information!</li>
+<li>Don’t modify raw data</li>
+<li>Include a Data Dictionary</li>
+</ul></li>
+<li>Tidy Data Properties of <em>tidy data</em>:
+<ul><li>each column is a variable</li>
+<li>each row is an observation</li>
+<li>each table is a single observational unit</li>
+</ul></li>
+<li>Common issues
+<ul><li>data values are stored in column headers
+<ul><li>e.g. treatment values, dates of sampling</li>
+</ul></li>
+<li>multiple variables are stored in one column</li>
+<li>variables are stored in rows and columns</li>
+<li>“1 observational unit = 1 table” is violated
+<ul><li>e.g. subject info and measurements are stored in the same table</li>
+</ul></li>
+</ul></li>
+<li>Example: column labels encoding data
+<ul><li>wide-format data |name|Thin Mints|Samoas|Tagalongs| |–|–|–|–| |A|4|0|0| |B|2|0|2| |c|0|3|1|</li>
+</ul></li>
+<li>Example: re-structured columns
+<ul><li>long-format data |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|</li>
+</ul></li>
+<li>Example: multiple observational units |name|address|flavor|boxes| |–|–|–|–| |A|3828 Piermont Dr|Thin Mints|4| |B|221B Baker St|Thin Mints|2| |B|221B Baker St|Tagalongs|2| |C|124 Conch St|Samoas|3| |C|124 Conch St|Tagalongs|1|</li>
+<li>Example: separate tables .pull-left[ |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|] .pull-right[ |name|address| |–|–| |A|3828 Piermont Dr| |B|221B Baker St| |C|124 Conch St|]</li>
+<li>Spreadsheet Formatting
+<ul><li>prefer empty cells or <code>'NA'</code> for missing data
+<ul><li><em>be careful about <code>'NA'</code> for certain types of data (e.g. country code for “Namibia”)</em></li>
+</ul></li>
+<li>do NOT space out data with empty rows/columns</li>
+<li>do NOT use text formatting (e.g. bold/italics) to store information</li>
+<li>WATCH OUT: Excel LOVES to convert data into a date format</li>
+</ul></li>
+<li>Example: spreadsheet formatting <img src="spreadsheet_formatting.png" alt="Figure 10 from Broman &amp; Woo “Data Organization in Spreadsheets”, showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."> Instead of highlighting the cells with outliers, encode outlier status as its own column.</li>
+<li>Data practices
+<ul><li>store raw data for reproducibility
+<ul><li>copy and modify files instead</li>
+<li>and/or use scripts to clean/wrangle raw data</li>
+</ul></li>
+<li>document your processing steps in code or text
+<ul><li>someone else can see what processing was done, and reproduce it</li>
+<li>OpenRefine is a great tool for cleaning messy data (and records the steps for you)!<br><a href="https://uf-repro.github.io/OpenRefine-intro/" class="external-link uri">https://uf-repro.github.io/OpenRefine-intro/</a>
+</li>
+</ul></li>
+</ul></li>
+<li>Data processing
 <ul><li>Documenting what you are doing while you are doing it is tedious.
-<ul><li>BUT it is the best way to understand why we observed specific outcomes. layout: true .column.bg-main1[.content.vmiddle[ <img src="horse_1.jpg" title="4 steps to drawing a horse. The steps are: '1. Draw 2 circles', '2. Draw the legs', '3. Draw the face', '4. Draw the hair.' Each step shows the cumulative result drawing a simple cartoon horse." alt="4 steps to drawing a horse. The steps are: '1. Draw 2 circles', '2. Draw the legs', '3. Draw the face', '4. Draw the hair.' Each step shows the cumulative result drawing a simple cartoon horse.">]] .column.bg-main2[.content.vmiddle[ <img src="horse_2.jpg" title="The 5th step is '5. Add small details', and the drawing is of a much more detailed horse with more realistic proportions and shading to give it a 3-dimensional appearance. Clearly the instructions skipped a bunch of important and tedious steps." alt="The 5th step is '5. Add small details', and the drawing is of a much more detailed horse with more realistic proportions and shading to give it a 3-dimensional appearance. Clearly the instructions skipped a bunch of important and tedious steps.">]] count: false count: false layout: false</li>
+<ul><li>BUT it is the best way to record what you did so that others can understand why we observed specific outcomes. layout: true .column.bg-main1[.content.vmiddle[ <img src="horse_1.jpg" title="4 steps to drawing a horse. The steps are: '1. Draw 2 circles', '2. Draw the legs', '3. Draw the face', '4. Draw the hair.' Each step shows the cumulative result drawing a simple cartoon horse." alt="4 steps to drawing a horse. The steps are: '1. Draw 2 circles', '2. Draw the legs', '3. Draw the face', '4. Draw the hair.' Each step shows the cumulative result drawing a simple cartoon horse.">]] .column.bg-main2[.content.vmiddle[ <img src="horse_2.jpg" title="The 5th step is '5. Add small details', and the drawing is of a much more detailed horse with more realistic proportions and shading to give it a 3-dimensional appearance. Clearly the instructions skipped a bunch of important and tedious steps." alt="The 5th step is '5. Add small details', and the drawing is of a much more detailed horse with more realistic proportions and shading to give it a 3-dimensional appearance. Clearly the instructions skipped a bunch of important and tedious steps.">]] count: false count: false layout: false</li>
 </ul></li>
 </ul></li>
 <li>Many Analysts ## (Silberzahn et al. 2018) .pull-left.w65[ 29 teams of analysts were given the same data:
@@ -259,17 +306,6 @@ files are organized by site -&gt; date -&gt; data type</li>
 <li>Draw 7 small ovals within the space of the square. ]</li>
 </ol></li>
 <li>Share your drawings!</li>
-<li>Data practices
-<ul><li>store raw data for reproducibility
-<ul><li>copy and modify files instead</li>
-<li>and/or use scripts to clean/wrangle raw data</li>
-</ul></li>
-<li>document your processing steps in code or text
-<ul><li>someone else can see what processing was done, and reproduce it</li>
-<li>OpenRefine is a great tool for cleaning messy data (and records the steps for you)!<br><a href="https://uf-repro.github.io/OpenRefine-intro/" class="external-link uri">https://uf-repro.github.io/OpenRefine-intro/</a>
-</li>
-</ul></li>
-</ul></li>
 <li>Data Dictionary
 <ul><li>define your rows and columns
 <ul><li>e.g. do rows correspond to:

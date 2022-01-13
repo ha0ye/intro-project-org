@@ -239,16 +239,134 @@ Set up your project folder.
   - who and when is this project being done
 
 ---
+
 class: inverse, center, middle
 
-# Documenting for Reproducibility
+# Structuring Tabular Data (e.g. spreadsheets)
 
 ---
 
-# Motivations
+# Principles
+
+Make it easy for anyone to work with your data:
+* Structure data for analysis (i.e. "Tidy Data")
+* Don't use text-formatting to store information!
+* Don't modify raw data
+* Include a Data Dictionary
+
+---
+
+# Tidy Data
+
+Properties of *tidy data*:
+* each column is a variable
+* each row is an observation
+* each table is a single observational unit
+
+---
+
+# Common issues
+
+* data values are stored in column headers
+  - e.g. treatment values, dates of sampling
+* multiple variables are stored in one column
+* variables are stored in rows and columns
+* "1 observational unit = 1 table" is violated
+  - e.g. subject info and measurements are stored in the same table
+
+---
+
+# Example: column labels encoding data
+
+* wide-format data
+
+|name|Thin Mints|Samoas|Tagalongs|
+|--|--|--|--|
+|A|4|0|0|
+|B|2|0|2|
+|c|0|3|1|
+
+---
+
+# Example: re-structured columns
+
+* long-format data
+
+|name|flavor|boxes|
+|--|--|--|
+|A|Thin Mints|4|
+|B|Thin Mints|2|
+|B|Tagalongs|2|
+|C|Samoas|3|
+|C|Tagalongs|1|
+
+---
+
+# Example: multiple observational units
+
+|name|address|flavor|boxes|
+|--|--|--|--|
+|A|3828 Piermont Dr|Thin Mints|4|
+|B|221B Baker St|Thin Mints|2|
+|B|221B Baker St|Tagalongs|2|
+|C|124 Conch St|Samoas|3|
+|C|124 Conch St|Tagalongs|1|
+
+---
+
+# Example: separate tables
+
+.pull-left[
+|name|flavor|boxes|
+|--|--|--|
+|A|Thin Mints|4|
+|B|Thin Mints|2|
+|B|Tagalongs|2|
+|C|Samoas|3|
+|C|Tagalongs|1|
+]
+
+.pull-right[
+|name|address|
+|--|--|
+|A|3828 Piermont Dr|
+|B|221B Baker St|
+|C|124 Conch St|
+]
+
+---
+# Spreadsheet Formatting
+
+* prefer empty cells or `'NA'` for missing data
+  - *be careful about `'NA'` for certain types of data (e.g. country code for "Namibia")*
+* do NOT space out data with empty rows/columns
+* do NOT use text formatting (e.g. bold/italics) to store information
+* WATCH OUT: Excel LOVES to convert data into a date format
+
+---
+# Example: spreadsheet formatting
+
+![Figure 10 from Broman &amp; Woo "Data Organization in Spreadsheets", showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column.](spreadsheet_formatting.png)
+
+Instead of highlighting the cells with outliers, encode outlier status as its own column.
+
+---
+# Data practices
+
+* store raw data for reproducibility
+  - copy and modify files instead
+  - and/or use scripts to clean/wrangle raw data
+* document your processing steps in code or text
+  - someone else can see what processing was done, and reproduce it
+  - OpenRefine is a great tool for cleaning messy data (and records the steps for you)!  
+  https://uf-repro.github.io/OpenRefine-intro/
+
+---
+
+# Data processing
 
 * Documenting what you are doing while you are doing it is tedious.
-  - BUT it is the best way to understand why we observed specific outcomes.
+  - BUT it is the best way to record what you did so that others can understand why we observed specific outcomes.
 
 ---
 layout: true
@@ -320,17 +438,6 @@ Digital is fine, if you prefer a phone/tablet device!
 class: center, middle
 
 # Share your drawings!
-
----
-# Data practices
-
-* store raw data for reproducibility
-  - copy and modify files instead
-  - and/or use scripts to clean/wrangle raw data
-* document your processing steps in code or text
-  - someone else can see what processing was done, and reproduce it
-  - OpenRefine is a great tool for cleaning messy data (and records the steps for you)!  
-  https://uf-repro.github.io/OpenRefine-intro/
 
 ---
 
