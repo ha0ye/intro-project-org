@@ -26,9 +26,6 @@
   <a></a>
 </li>
       </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="handout.html">Handout</a>
-</li>
-<li>
   <a href="notes.html">Notes</a>
 </li>
 <li>
@@ -63,43 +60,30 @@
 
 <div id="syllabus" class="section level1">
 
-<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2022-01-09)</p>
+<p>Hao Ye Health Science Center Libraries, University of Florida (updated: 2022-01-13)</p>
 <div class="section level2">
 <h2 id="intro">Intro<a class="anchor" aria-label="anchor" href="#intro"></a></h2>
 <ul><li>Motivations You will work on projects that are more complex, involve more people, and take more time.
 <ul><li>your project team may change</li>
-<li>you may pause a project and come back to it later</li>
-<li>you may want to use parts of the project elsewhere A consistent organizational plan for your project will help with all these things! (and make your life easier)</li>
+<li>you may pause a project (for months or years) and come back to it later</li>
+<li>you may want to use parts of the project elsewhere A consistent scheme for organizing your project will make your life easier!</li>
 </ul></li>
 <li>Learning Outcomes By the end of the workshop, participants will be able to:
 <ul><li>implement recommended practices for file and folder organization in projects</li>
 <li>use and apply file naming conventions</li>
-<li>understand the principles for metadata documentation</li>
+<li>understand principles for documenting data and methods</li>
 </ul></li>
 </ul></div>
 <div class="section level2">
 <h2 id="file-and-folder-organization">File and Folder Organization<a class="anchor" aria-label="anchor" href="#file-and-folder-organization"></a></h2>
 <ul><li>Principles
 <ul><li>You don’t want to spend time looking for stuff. Neither do your teammates</li>
-<li>Keep project information in <strong>one</strong> place.
-<ul><li>project description</li>
-<li>data</li>
-<li>code</li>
-<li>figures</li>
-<li>manuscript</li>
+<li>Keep everything in <strong>one</strong> place.
+<ul><li>project files (e.g. data, code, slides, report)</li>
+<li>project information (e.g. team info, important links, project description, deadlines)</li>
 </ul></li>
 </ul></li>
-<li>Practices
-<ul><li>Use sub-folders to organize data, figures, manuscript, etc.
-<ul><li>separate raw and processed data</li>
-</ul></li>
-<li>Use <code>README</code> files to document:
-<ul><li>who did the experiments</li>
-<li>data formatting (more on this later)</li>
-<li>when/how/why</li>
-</ul></li>
-</ul></li>
-<li>Structuring a Project Folder
+<li>Example Project Folder
 <pre class="hljs remark-code">
 project/
 ├── data/
@@ -112,39 +96,53 @@ project/
 <ul><li>more examples in <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986" class="external-link">Marwick et al. 2018 “Packaging Data Analytical Work Reproducibly Using R (and Friends)”</a>
 </li>
 </ul></li>
+<li>Practices
+<ul><li>Use sub-folders to organize data, figures, manuscript, etc.
+<ul><li>separate raw data and processed data</li>
+</ul></li>
+<li>Use <code>README</code> files to document:
+<ul><li>who did the experiments</li>
+<li>when/how/why</li>
+<li>data formatting (more on this later)</li>
+</ul></li>
+</ul></li>
 <li>A Project README
-<ul><li>short summary of project &amp; goals</li>
+<ul><li>short summary of project &amp; goals
+<ul><li>how would you introduce your project to someone new?</li>
+</ul></li>
 <li>guidance for interacting with the project
 <ul><li>(software) how to install and run it</li>
 <li>(paper) which file is the final report/paper</li>
 <li>(data) the summary figure or main file</li>
 </ul></li>
-<li>description of folders (if non-standard)</li>
-<li>funding acknowledgments / how to cite</li>
+<li>funding acknowledgments / team members / how to cite</li>
 </ul></li>
-<li>Where to store projects
-<pre class="hljs remark-code">
-hye/
-├── grants/
-├── presentations_and_travel/
-├── projects/
-├── teaching/
-├── vitae/
-└── websites/
-</pre>
-<ul><li>find similar types of projects in the same place<br>
-(easier to copy-paste from existing projects)</li>
+<li>Other project information
+<ul><li>Conversations about a project happen in other media (e.g. email, chat, verbal conversation)
+<ul><li>be sure to record important info in your project folder!</li>
+<li><em>if it’s not in your project folder, it isn’t “real”</em></li>
+</ul></li>
+<li>What information is important?
+<ul><li>anything that affects decision making (e.g. what to do, which methods, deadlines)</li>
+<li>links to external info (e.g. other projects, databases, references)</li>
+</ul></li>
 </ul></li>
 <li>Summary
 <ul><li>store project files and <strong>project information</strong> together in the same place</li>
-<li>make the project easy to engage with
-<ul><li>you don’t need to document everything, someone invested in the details will seek you out</li>
+<li>make the project easy to engage with for someone not familiar with it
+<ul><li>it is really easy to misremember details, especially for projects that you thought were “complete”</li>
 </ul></li>
 </ul></li>
 </ul></div>
 <div class="section level2">
 <h2 id="naming-things">Naming Things<a class="anchor" aria-label="anchor" href="#naming-things"></a></h2>
-<ul><li>Principles Choose file names that:
+<ul><li>Motivations
+<ul><li>You want to be able to see a list of filenames and understand their contents without having to open the files.
+<ul><li>make it easy to find the file you need!</li>
+<li>make it easy to see what is missing!</li>
+</ul></li>
+</ul></li>
+<li>Principles Choose file names that:
 <ul><li>are machine-readable</li>
 <li>are human-readable</li>
 <li>sort nicely</li>
@@ -160,7 +158,7 @@ report-final FINAL HY-comments ver3.docx
 </li>
 <li>Examples (BETTER)
 <pre class="hljs remark-code">
-hao_learned_about_underscores.xlsx
+hao_table-of-punctuation-marks.xlsx
 01_import-data.R
 fig01_scatterplot_length-vs-interest.png
 fig02_histogram_talk-attendance.png
@@ -170,16 +168,18 @@ yearly-report_2020-06-01_hy-comments.docx
 <li>Machine-Readable
 <ul><li>Avoid spaces, punctuation, accented characters, mixing CAPS and lowercase.
 <ul><li>computers can struggle with these</li>
-<li>easier names help people remember!</li>
+<li>simpler names help avoid confusion!</li>
 </ul></li>
 <li>Separate words with hyphens <code>'-'</code>
 </li>
-<li>Separate groupings with underscores <code>'_'</code>
-</li>
+<li>Group words to organize files; separate groups with underscores <code>'_'</code><br>
+(details and examples later)</li>
 </ul></li>
 <li>Human-Readable
-<ul><li>Use filenames that will help you find it later.</li>
-<li>For code, use nouns for data objects and verbs for actions:
+<ul><li>Use filenames that will help you find the right file later.
+<ul><li>include a very short summary of the file contents if possible</li>
+</ul></li>
+<li>Use nouns for data objects and verbs for code:
 <ul><li><code>load-data.R</code></li>
 <li><code>data_mtcars.csv</code></li>
 <li><code>make-scatterplot.R</code></li>
@@ -195,8 +195,7 @@ yearly-report_2020-06-01_hy-comments.docx
 </ul></li>
 <li>Use RFC-3339 for dates:
 <ul><li>
-<code>YYYY-MM-DD</code> format (alphabetical sorting makes it chronological, too!) <img src="https://imgs.xkcd.com/comics/iso_8601_2x.png" width="60%"><a href="https://xkcd.com/1179/" class="external-link">xkcd/1179</a>
-</li>
+<code>YYYY-MM-DD</code> format (alphabetical sorting makes it chronological, too!)</li>
 </ul></li>
 </ul></li>
 <li>Example
@@ -208,55 +207,59 @@ siteB_2020-04-01_weather.dat
 siteB_2020-05-01_animal-count.xls
 siteB_2020-05-01_weather.dat
 </pre>
-files are organized by site -&gt; date -&gt; type of measurement</li>
+files are organized by site -&gt; date -&gt; data type</li>
 <li>Summary
 <ul><li>you probably use names to organize files already!
 <ul><li>these tips can help improve your system</li>
 </ul></li>
-<li>use a consistent scheme for labeling</li>
+<li>be consistent in your naming scheme!
+<ul><li>you may want to adjust your organization and names in the early stages of your project</li>
+</ul></li>
 </ul></li>
 </ul></div>
 <div class="section level2">
-<h2 id="structuring-tabular-data-eg-spreadsheets">Structuring Tabular Data (e.g. spreadsheets)<a class="anchor" aria-label="anchor" href="#structuring-tabular-data-eg-spreadsheets"></a></h2>
-<ul><li>Principles Make it easy for anyone to work with your data:
-<ul><li>Structure data for analysis (i.e. “Tidy Data”)</li>
-<li>Don’t use text-formatting to store information!</li>
-<li>Don’t modify raw data</li>
-<li>Include a Data Dictionary</li>
-</ul></li>
-<li>Tidy Data Properties of <em>tidy data</em>:
-<ul><li>each column is a variable</li>
-<li>each row is an observation</li>
-<li>each table is a single observational unit</li>
-</ul></li>
-<li>Common issues
-<ul><li>data values are stored in column headers
-<ul><li>e.g. treatment values, dates of sampling</li>
-</ul></li>
-<li>multiple variables are stored in one column</li>
-<li>variables are stored in rows and columns</li>
-<li>“1 observational unit = 1 table” is violated
-<ul><li>e.g. subject info and measurements are stored in the same table</li>
+<h2 id="activity-1">Activity 1<a class="anchor" aria-label="anchor" href="#activity-1"></a></h2>
+<ul><li>In-Class Activity Set up your project folder.
+<ul><li>what subfolders do you need?</li>
+<li>what info should you include in the project description?
+<ul><li>which gene</li>
+<li>what class is this for</li>
+<li>who and when is this project being done</li>
 </ul></li>
 </ul></li>
-<li>Example: column labels encoding data
-<ul><li>wide-format data |name|Thin Mints|Samoas|Tagalongs| |–|–|–|–| |A|4|0|0| |B|2|0|2| |c|0|3|1|</li>
+</ul></div>
+<div class="section level2">
+<h2 id="documenting-for-reproducibility">Documenting for Reproducibility<a class="anchor" aria-label="anchor" href="#documenting-for-reproducibility"></a></h2>
+<ul><li>Motivations
+<ul><li>Documenting what you are doing while you are doing it is tedious.
+<ul><li>BUT it is the best way to understand why we observed specific outcomes. layout: true .column.bg-main1[.content.vmiddle[ <img src="horse_1.jpg" title="4 steps to drawing a horse. The steps are: '1. Draw 2 circles', '2. Draw the legs', '3. Draw the face', '4. Draw the hair.' Each step shows the cumulative result drawing a simple cartoon horse." alt="4 steps to drawing a horse. The steps are: '1. Draw 2 circles', '2. Draw the legs', '3. Draw the face', '4. Draw the hair.' Each step shows the cumulative result drawing a simple cartoon horse.">]] .column.bg-main2[.content.vmiddle[ <img src="horse_2.jpg" title="The 5th step is '5. Add small details', and the drawing is of a much more detailed horse with more realistic proportions and shading to give it a 3-dimensional appearance. Clearly the instructions skipped a bunch of important and tedious steps." alt="The 5th step is '5. Add small details', and the drawing is of a much more detailed horse with more realistic proportions and shading to give it a 3-dimensional appearance. Clearly the instructions skipped a bunch of important and tedious steps.">]] count: false count: false layout: false</li>
 </ul></li>
-<li>Example: re-structured columns
-<ul><li>long-format data |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|</li>
 </ul></li>
-<li>Example: multiple observational units |name|address|flavor|boxes| |–|–|–|–| |A|3828 Piermont Dr|Thin Mints|4| |B|221B Baker St|Thin Mints|2| |B|221B Baker St|Tagalongs|2| |C|124 Conch St|Samoas|3| |C|124 Conch St|Tagalongs|1|</li>
-<li>Example: separate tables .pull-left[ |name|flavor|boxes| |–|–|–| |A|Thin Mints|4| |B|Thin Mints|2| |B|Tagalongs|2| |C|Samoas|3| |C|Tagalongs|1|] .pull-right[ |name|address| |–|–| |A|3828 Piermont Dr| |B|221B Baker St| |C|124 Conch St|]</li>
-<li>Spreadsheet Formatting
-<ul><li>prefer empty cells or <code>'NA'</code> for missing data
-<ul><li><em>be careful about <code>'NA'</code> for certain types of data (e.g. country code for “Namibia”)</em></li>
+<li>Many Analysts ## (Silberzahn et al. 2018) .pull-left.w65[ 29 teams of analysts were given the same data:
+<ul><li>Are soccer referees more likely to give red cards to dark-skin-toned players vs. light-skin-toned players? ] .pull-right.w35[ <img src="silberzahn_results.jpg">]</li>
 </ul></li>
-<li>do NOT space out data with empty rows/columns</li>
-<li>do NOT use text formatting (e.g. bold/italics) to store information</li>
-<li>WATCH OUT: Excel LOVES to convert data into a date format</li>
+</ul></div>
+<div class="section level2">
+<h2 id="activity-2">Activity 2<a class="anchor" aria-label="anchor" href="#activity-2"></a></h2>
+<ul><li>Setup
+<ul><li>you will need a drawing utensil
+<ul><li>pen, pencil, marker (anything will do)</li>
 </ul></li>
-<li>Example: spreadsheet formatting <img src="spreadsheet_formatting.png" alt="Figure 10 from Broman &amp; Woo “Data Organization in Spreadsheets”, showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."> Instead of highlighting the cells with outliers, encode outlier status as its own column.</li>
-<li>Raw Data
+<li>and something to draw on
+<ul><li>any scratch paper, post-it, junk mail envelope (not too small that it’s hard to draw on) Digital is fine, if you prefer a phone/tablet device! .small[</li>
+</ul></li>
+</ul><ol style="list-style-type: decimal"><li>Draw 8/10 of a small oval in the center with the open part facing to the bottom left.</li>
+<li>Draw 1/3 of a large circle underneath the oval and small perpendicular lines on each end of it.</li>
+<li>At the center of the ⅓ circle, draw two squares with a small gap between them.</li>
+<li>Draw a wavy line underneath the squares.</li>
+<li>On the ends of the larger circle, draw smaller half circles with three dots in the middle.</li>
+<li>Draw two big circles on each side of the small oval from the beginning. They should be more on the top than on the bottom.</li>
+<li>In the big circles, draw smaller circles and in those draw even smaller filled-in circles.</li>
+<li>Draw a wavy square around everything you drew so far.</li>
+<li>Draw 7 small ovals within the space of the square. ]</li>
+</ol></li>
+<li>Share your drawings!</li>
+<li>Data practices
 <ul><li>store raw data for reproducibility
 <ul><li>copy and modify files instead</li>
 <li>and/or use scripts to clean/wrangle raw data</li>
@@ -282,12 +285,8 @@ files are organized by site -&gt; date -&gt; type of measurement</li>
 <li>Example Data Dictionary .compact-table[ |name|plot_name|group|description|type| |–|–|–|–|–| |mouse|Mouse|demographic|Animal identifier|text| |sex|Sex|demographic|Male (M) or Female (F)|factor| |sac_date|Date of sac|demographic|Date mouse was sacrificed|date| |partial_inflation|Partial inflation|clinical|Indicates if mouse showed partial pancreatic inflation|logical| |coat_color|Coat color|demographic|Coat color, by visual inspection|factor| |crumblers|Crumblers|clinical|Indicates if mouse stored food in their bedding|logical| |diet_days|Days on diet|clinical|Number of days on high-fat diet|numeric|] (modified from Figure 9 of Broman &amp; Woo “Data Organization in Spreadsheets”)</li>
 </ul></div>
 <div class="section level2">
-<h2 id="thanks">Thanks<a class="anchor" aria-label="anchor" href="#thanks"></a></h2>
-<ul><li>Contact me for additional questions or consultation requests!</li>
-<li>Check back in on the libguide for more modules and contact info:
-<ul><li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li>
-</ul></li>
-</ul></div>
+<h2 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a></h2>
+</div>
 </div>
 
   </div>

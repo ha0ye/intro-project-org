@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>slides.knit</title>
+    <title>title</title>
     <meta charset="utf-8" />
     <meta name="author" content="Hao Ye" />
+    <link href="libs/remark-css-0.0.1/kunoichi.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/ninjutsu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/ninpo.css" type="text/css" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="widths.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -17,7 +21,7 @@ class: inverse, center, middle
 # Organizing Research Projects for Reproducibility
 ### Hao Ye
 ### Health Science Center Libraries, University of Florida
-### (updated: 2022-01-09)
+### (updated: 2022-01-13)
 
 ---
 
@@ -26,12 +30,12 @@ class: inverse, center, middle
 You will work on projects that are more complex, involve more people, and take more time.
 
 * your project team may change
-* you may pause a project and come back to it later
+* you may pause a project (for months or years) and come back to it later
 * you may want to use parts of the project elsewhere
 
 --
 
-A consistent organizational plan for your project will help with all these things! (and make your life easier)
+A consistent scheme for organizing your project will make your life easier!
 
 ---
 
@@ -41,7 +45,7 @@ By the end of the workshop, participants will be able to:
 
 * implement recommended practices for file and folder organization in projects
 * use and apply file naming conventions
-* understand the principles for metadata documentation
+* understand principles for documenting data and methods
 
 ---
 class: inverse, center, middle
@@ -54,28 +58,13 @@ class: inverse, center, middle
 
 * You don't want to spend time looking for stuff.
   Neither do your teammates
-* Keep project information in **one** place.
-  - project description
-  - data
-  - code
-  - figures
-  - manuscript
+* Keep everything in **one** place.
+  - project files (e.g. data, code, slides, report)
+  - project information (e.g. team info, important links, project description, deadlines)
 
 ---
 
-# Practices
-
-* Use sub-folders to organize data, figures, manuscript, etc.
-  - separate raw and processed data
-* Use `README` files to document:
-  - who did the experiments
-  - data formatting
-    (more on this later)
-  - when/how/why
-
----
-
-# Structuring a Project Folder
+# Example Project Folder
 
 &lt;pre class = "hljs remark-code"&gt;
 project/
@@ -91,45 +80,56 @@ project/
 * more examples in [Marwick et al. 2018 "Packaging Data Analytical Work Reproducibly Using R (and Friends)"](https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986)
 
 ---
+
+# Practices
+
+* Use sub-folders to organize data, figures, manuscript, etc.
+  - separate raw data and processed data
+* Use `README` files to document:
+  - who did the experiments
+  - when/how/why
+  - data formatting
+    (more on this later)
+
+---
 # A Project README
 
 * short summary of project &amp; goals
+  - how would you introduce your project to someone new?
 * guidance for interacting with the project
   - (software) how to install and run it
   - (paper) which file is the final report/paper
   - (data) the summary figure or main file
-* description of folders (if non-standard)
-* funding acknowledgments / how to cite
+* funding acknowledgments / team members / how to cite
 
 ---
+# Other project information
 
-# Where to store projects
-
-&lt;pre class = "hljs remark-code"&gt;
-hye/
-├── grants/
-├── presentations_and_travel/
-├── projects/
-├── teaching/
-├── vitae/
-└── websites/
-&lt;/pre&gt;
---
-
-* find similar types of projects in the same place  
-  (easier to copy-paste from existing projects)
+* Conversations about a project happen in other media (e.g. email, chat, verbal conversation)
+  - be sure to record important info in your project folder!
+  - *if it's not in your project folder, it isn't "real"*
+* What information is important?
+  - anything that affects decision making (e.g. what to do, which methods, deadlines)
+  - links to external info (e.g. other projects, databases, references)
 
 ---
 # Summary
 
 * store project files and **project information** together in the same place
-* make the project easy to engage with
-  - you don't need to document everything, someone invested in the details will seek you out
+* make the project easy to engage with for someone not familiar with it
+  - it is really easy to misremember details, especially for projects that you thought were "complete"
   
 ---
 class: inverse, center, middle
 
 # Naming Things
+
+---
+# Motivations
+
+* You want to be able to see a list of filenames and understand their contents without having to open the files.
+  - make it easy to find the file you need!
+  - make it easy to see what is missing!
 
 ---
 
@@ -157,7 +157,7 @@ report-final FINAL HY-comments ver3.docx
 # Examples (BETTER)
 
 &lt;pre class = "hljs remark-code"&gt;
-hao_learned_about_underscores.xlsx
+hao_table-of-punctuation-marks.xlsx
 01_import-data.R
 fig01_scatterplot_length-vs-interest.png
 fig02_histogram_talk-attendance.png
@@ -169,16 +169,18 @@ yearly-report_2020-06-01_hy-comments.docx
 
 * Avoid spaces, punctuation, accented characters, mixing CAPS and lowercase.
   - computers can struggle with these
-  - easier names help people remember!
+  - simpler names help avoid confusion!
 * Separate words with hyphens `'-'`
-* Separate groupings with underscores `'_'`
+* Group words to organize files; separate groups with underscores `'_'`  
+  (details and examples later)
 
 ---
 
 # Human-Readable
 
-* Use filenames that will help you find it later.
-* For code, use nouns for data objects and verbs for actions:
+* Use filenames that will help you find the right file later.
+  - include a very short summary of the file contents if possible
+* Use nouns for data objects and verbs for code:
   - `load-data.R`
   - `data_mtcars.csv`
   - `make-scatterplot.R`
@@ -195,12 +197,6 @@ yearly-report_2020-06-01_hy-comments.docx
   - `YYYY-MM-DD` format (alphabetical sorting makes it chronological, too!)
 
 ---
-class: center
-&lt;img src="https://imgs.xkcd.com/comics/iso_8601_2x.png" width="60%" /&gt;
-
-[xkcd/1179](https://xkcd.com/1179/)
-
----
 
 # Example
 
@@ -214,7 +210,7 @@ siteB_2020-05-01_weather.dat
 &lt;/pre&gt;
 
 --
-files are organized by site -&gt; date -&gt; type of measurement
+files are organized by site -&gt; date -&gt; data type
 
 ---
 
@@ -222,122 +218,111 @@ files are organized by site -&gt; date -&gt; type of measurement
 
 * you probably use names to organize files already!
   - these tips can help improve your system
-* use a consistent scheme for labeling
+* be consistent in your naming scheme!
+  - you may want to adjust your organization and names in the early stages of your project
 
 ---
 class: inverse, center, middle
 
-# Structuring Tabular Data (e.g. spreadsheets)
+# Activity 1
 
 ---
 
-# Principles
+# In-Class Activity
 
-Make it easy for anyone to work with your data:
-* Structure data for analysis (i.e. "Tidy Data")
-* Don't use text-formatting to store information!
-* Don't modify raw data
-* Include a Data Dictionary
+Set up your project folder.
+
+* what subfolders do you need?
+* what info should you include in the project description?
+  - which gene
+  - what class is this for
+  - who and when is this project being done
+
+---
+class: inverse, center, middle
+
+# Documenting for Reproducibility
 
 ---
 
-# Tidy Data
+# Motivations
 
-Properties of *tidy data*:
-* each column is a variable
-* each row is an observation
-* each table is a single observational unit
+* Documenting what you are doing while you are doing it is tedious.
+  - BUT it is the best way to understand why we observed specific outcomes.
 
 ---
+layout: true
+class: split-two middle
 
-# Common issues
-
-* data values are stored in column headers
-  - e.g. treatment values, dates of sampling
-* multiple variables are stored in one column
-* variables are stored in rows and columns
-* "1 observational unit = 1 table" is violated
-  - e.g. subject info and measurements are stored in the same table
-
----
-
-# Example: column labels encoding data
-
-* wide-format data
-
-|name|Thin Mints|Samoas|Tagalongs|
-|--|--|--|--|
-|A|4|0|0|
-|B|2|0|2|
-|c|0|3|1|
+.column.bg-main1[.content.vmiddle[
+&lt;img src="horse_1.jpg" title="4 steps to drawing a horse. The steps are: '1. Draw 2 circles', '2. Draw the legs', '3. Draw the face', '4. Draw the hair.' Each step shows the cumulative result drawing a simple cartoon horse." alt="4 steps to drawing a horse. The steps are: '1. Draw 2 circles', '2. Draw the legs', '3. Draw the face', '4. Draw the hair.' Each step shows the cumulative result drawing a simple cartoon horse."  /&gt;
+]]
+.column.bg-main2[.content.vmiddle[
+&lt;img src="horse_2.jpg" title="The 5th step is '5. Add small details', and the drawing is of a much more detailed horse with more realistic proportions and shading to give it a 3-dimensional appearance. Clearly the instructions skipped a bunch of important and tedious steps." alt="The 5th step is '5. Add small details', and the drawing is of a much more detailed horse with more realistic proportions and shading to give it a 3-dimensional appearance. Clearly the instructions skipped a bunch of important and tedious steps."  /&gt;
+]]
 
 ---
-
-# Example: re-structured columns
-
-* long-format data
-
-|name|flavor|boxes|
-|--|--|--|
-|A|Thin Mints|4|
-|B|Thin Mints|2|
-|B|Tagalongs|2|
-|C|Samoas|3|
-|C|Tagalongs|1|
+class: show-00
+---
+class: show-10
+count: false
+---
+count: false
+---
+layout: false
 
 ---
+class: split-two middle
 
-# Example: multiple observational units
+# Many Analysts
+## (Silberzahn et al. 2018)
 
-|name|address|flavor|boxes|
-|--|--|--|--|
-|A|3828 Piermont Dr|Thin Mints|4|
-|B|221B Baker St|Thin Mints|2|
-|B|221B Baker St|Tagalongs|2|
-|C|124 Conch St|Samoas|3|
-|C|124 Conch St|Tagalongs|1|
+.pull-left.w65[
+29 teams of analysts were given the same data:
+* Are soccer referees more likely to give red cards to dark-skin-toned players vs. light-skin-toned players?
 
----
-
-# Example: separate tables
-
-.pull-left[
-|name|flavor|boxes|
-|--|--|--|
-|A|Thin Mints|4|
-|B|Thin Mints|2|
-|B|Tagalongs|2|
-|C|Samoas|3|
-|C|Tagalongs|1|
 ]
-
-.pull-right[
-|name|address|
-|--|--|
-|A|3828 Piermont Dr|
-|B|221B Baker St|
-|C|124 Conch St|
+.pull-right.w35[
+&lt;img src="silberzahn_results.jpg"  /&gt;
 ]
 
 ---
-# Spreadsheet Formatting
+class: inverse, center, middle
 
-* prefer empty cells or `'NA'` for missing data
-  - *be careful about `'NA'` for certain types of data (e.g. country code for "Namibia")*
-* do NOT space out data with empty rows/columns
-* do NOT use text formatting (e.g. bold/italics) to store information
-* WATCH OUT: Excel LOVES to convert data into a date format
-
----
-# Example: spreadsheet formatting
-
-![Figure 10 from Broman &amp; Woo "Data Organization in Spreadsheets", showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column.](spreadsheet_formatting.png)
-
-Instead of highlighting the cells with outliers, encode outlier status as its own column.
+# Activity 2
 
 ---
 
-# Raw Data
+# Setup
+
+* you will need a drawing utensil 
+  - pen, pencil, marker (anything will do)
+* and something to draw on
+  - any scratch paper, post-it, junk mail envelope (not too small that it's hard to draw on)
+
+Digital is fine, if you prefer a phone/tablet device!
+
+---
+
+.small[
+1. Draw 8/10 of a small oval in the center with the open part facing to the bottom left.
+2. Draw 1/3 of a large circle underneath the oval and small perpendicular lines on each end of it.
+3. At the center of the ⅓ circle, draw two squares with a small gap between them.
+4. Draw a wavy line underneath the squares.
+5. On the ends of the larger circle, draw smaller half circles with three dots in the middle.
+6. Draw two big circles on each side of the small oval from the beginning. They should be more on the top than on the bottom.
+7. In the big circles, draw smaller circles and in those draw even smaller filled-in circles.
+8. Draw a wavy square around everything you drew so far.
+9. Draw 7 small ovals within the space of the square.
+]
+ 
+---
+class: center, middle
+
+# Share your drawings!
+
+---
+# Data practices
 
 * store raw data for reproducibility
   - copy and modify files instead
@@ -379,12 +364,11 @@ Instead of highlighting the cells with outliers, encode outlier status as its ow
 (modified from Figure 9 of Broman &amp; Woo "Data Organization in Spreadsheets")
 
 ---
+class: inverse, center, middle
 
-# Thanks
+# Summary
 
-* Contact me for additional questions or consultation requests!
-* Check back in on the libguide for more modules and contact info:
-  - https://guides.uflib.ufl.edu/reproducibility
+---
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
