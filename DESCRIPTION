@@ -27,4 +27,4 @@ Depends:
     R (>= 2.10)
 learningOutcomes: * implement recommended practices for file and folder organization in projects
  * use and apply file naming conventions
- * understand the principles for metadata documentation
+ * understand principles for documenting data and methods

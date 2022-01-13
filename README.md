@@ -25,4 +25,4 @@ By the end of the workshop, participants will be able to:
 -   implement recommended practices for file and folder organization in
     projects
 -   use and apply file naming conventions
--   understand the principles for metadata documentation
+-   understand principles for documenting data and methods
