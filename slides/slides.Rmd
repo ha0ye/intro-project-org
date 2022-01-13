@@ -366,7 +366,7 @@ class: center, middle
 * store raw data for reproducibility
   - copy and modify files instead
   - and/or use scripts to clean/wrangle raw data
-* document processing steps in code or text
+* document your processing steps in code or text
   - someone else can see what processing was done, and reproduce it
   - OpenRefine is a great tool for cleaning messy data (and records the steps for you)!  
   https://uf-repro.github.io/OpenRefine-intro/
@@ -409,5 +409,10 @@ class: inverse, center, middle
 
 ---
 
-
+* These are general recommendations for organizing your projects!
+  - You don't have to adopt all of these now. A lot will depend on your area of research and what works best with your teammates.
+* If you find you are spending a lot of time doing tedious work...
+  - there may be a better way!
+  - Ask me about alternatives (for your current project or the future!) - haoye@ufl.edu
+* Resources and other workshops that I teach - https://guides.uflib.ufl.edu/reproducibility
 
