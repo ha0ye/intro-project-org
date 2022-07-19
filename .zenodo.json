@@ -1,5 +1,6 @@
 {
   "title": "Organizing Research Projects for Reproducibility",
+  "version": "1.0.0",
   "creators": [
     {
       "affiliation": "University of Florida",
@@ -16,7 +17,6 @@
     "Workshop",
     "Data"
   ],
-  "access_right": "open",
-  "license": "CC-BY-4.0",
+  "license": "CC BY 4.0",
   "upload_type": "lesson"
 }

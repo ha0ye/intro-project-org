@@ -1,4 +1,4 @@
-Package: IntroProjectOrganization
+Package: intro.project.org
 Title: Organizing Research Projects for Reproducibility
 Version: 1.0.0
 Authors@R: 
@@ -28,3 +28,4 @@ Depends:
 learningOutcomes: * implement recommended practices for file and folder organization in projects
  * use and apply file naming conventions
  * understand principles for documenting data and methods
+X-schema.org-keywords: Open Educational Resources, Research Support Skills, Research Data Management, Metadata, Workshop, Data
