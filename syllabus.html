@@ -59,27 +59,20 @@
     </div>
 
 <div id="syllabus" class="section level1">
-
 <div class="section level2">
 <h2 id="intro">Intro<a class="anchor" aria-label="anchor" href="#intro"></a></h2>
-<ul><li>Goals
-<ul><li>
+<ul><li>Goals<ul><li>
 <em>practical</em> advice for research projects:</li>
 <li>you can use these tips now</li>
-<li>concepts and skills will scale to:
-<ul><li>more complex projects</li>
+<li>concepts and skills will scale to:<ul><li>more complex projects</li>
 <li>more collaborators</li>
 </ul></li>
 </ul></li>
-<li>Motivations
-<ul><li>organizing your projects and data will:
-<ul><li>improve reproducibility</li>
+<li>Motivations<ul><li>organizing your projects and data will:<ul><li>improve reproducibility</li>
 <li>make the work more accessible for others <strong>this includes yourself at a later point!</strong>
 </li>
-</ul></li>
-</ul></li>
-<li>Learning Outcomes
-<ul><li>implement recommended practices for file and folder organization in projects</li>
+</ul></li></ul></li>
+<li>Learning Outcomes<ul><li>implement recommended practices for file and folder organization in projects</li>
 <li>use and apply file naming conventions</li>
 <li>understand the principles of tidy data for structuring tabular data</li>
 </ul></li>
@@ -88,21 +81,15 @@
 <h2 id="file-and-folder-organization">File and Folder Organization<a class="anchor" aria-label="anchor" href="#file-and-folder-organization"></a></h2>
 <ul><li>
 <p>Principles for Organization</p>
-<ul><li>You don’t want to spend time looking for stuff.
-<ul><li>Your collaborators don’t want to spend time looking for stuff either.</li>
+<ul><li>You don’t want to spend time looking for stuff.<ul><li>Your collaborators don’t want to spend time looking for stuff either.</li>
 <li>Keep project files in a single folder.</li>
 </ul></li>
-<li>Document key decisions about the project.
-<ul><li>You don’t want your collaborators bugging you with easily-answered questions.</li>
-</ul></li>
+<li>Document key decisions about the project.<ul><li>You don’t want your collaborators bugging you with easily-answered questions.</li></ul></li>
 </ul></li>
 <li>
 <p>Practices</p>
-<ul><li>Use sub-folders to organize data, figures, manuscript, etc.
-<ul><li>separate raw and processed data</li>
-</ul></li>
-<li>Maintain documentation on:
-<ul><li>who did the experiments</li>
+<ul><li>Use sub-folders to organize data, figures, manuscript, etc.<ul><li>separate raw and processed data</li></ul></li>
+<li>Maintain documentation on:<ul><li>who did the experiments</li>
 <li>what the format is for the data</li>
 <li>when/how/why</li>
 </ul></li>
@@ -116,8 +103,7 @@
 ├── teaching/
 ├── vitae/
 └── websites/</code></pre>
-<ul><li>When I want to {work/apply for money/fill out forms/etc.}, I know where to start.</li>
-</ul></li>
+<ul><li>When I want to {work/apply for money/fill out forms/etc.}, I know where to start.</li></ul></li>
 <li>
 <p>Inside a Project Folder</p>
 <pre><code>project/
@@ -128,13 +114,11 @@
 ├── R/
 └── README.md</code></pre>
 <ul><li>more examples in <a href="https://www.tandfonline.com/doi/abs/10.1080/00031305.2017.1375986" class="external-link">Marwick et al. 2018 “Packaging Data Analytical Work Reproducibly Using R (and Friends)”</a>
-</li>
-</ul></li>
+</li></ul></li>
 <li>
 <p>A Project README</p>
 <ul><li>short summary of project &amp; goals</li>
-<li>include guidance for the most common/important task
-<ul><li>(software) how to install and run it</li>
+<li>include guidance for the most common/important task<ul><li>(software) how to install and run it</li>
 <li>(paper) which file is the final report/paper</li>
 <li>(data) the summary figure or main file</li>
 </ul></li>
@@ -143,11 +127,8 @@
 </ul></li>
 <li>
 <p>Summary</p>
-<ul><li>for each project, store files and information together
-<ul><li>don’t rely on memory!</li>
-</ul></li>
-<li>make it easy to use
-<ul><li>
+<ul><li>for each project, store files and information together<ul><li>don’t rely on memory!</li></ul></li>
+<li>make it easy to use<ul><li>
 <strong>(avoids)</strong> someone who would be interested not having the patience to engage</li>
 <li>someone who <em>needs</em> specific details <em>will</em> go digging for it</li>
 </ul></li>
@@ -157,12 +138,10 @@
 <h2 id="naming-things">Naming Things<a class="anchor" aria-label="anchor" href="#naming-things"></a></h2>
 <ul><li>
 <p>Principles</p>
-<ul><li>Choose file names that:
-<ul><li>are machine-readable</li>
+<ul><li>Choose file names that:<ul><li>are machine-readable</li>
 <li>are human-readable</li>
 <li>play well with default ordering</li>
-</ul></li>
-</ul></li>
+</ul></li></ul></li>
 <li>
 <p>Examples (NOT SO GOOD)</p>
 <pre><code>Drake's FILES with spaces and punctuation.xlsx
@@ -181,8 +160,7 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 </li>
 <li>
 <p>Machine-Readable</p>
-<ul><li>Avoid spaces, punctuation, accented characters, mixing capital and lower-case.
-<ul><li>computers and filesystems can struggle with these</li>
+<ul><li>Avoid spaces, punctuation, accented characters, mixing capital and lower-case.<ul><li>computers and filesystems can struggle with these</li>
 <li>easier names help people remember, too!</li>
 </ul></li>
 <li>Use underscore <code>'_'</code> between metadata groups</li>
@@ -191,24 +169,16 @@ report-on-DEC1_2020-06-01_HY-comments.docx</code></pre>
 <li>
 <p>Human-Readable</p>
 <ul><li>Use filenames that will help you find it later.</li>
-<li>For code, use nouns for objects and verbs for actions:
-<ul><li>e.g. <code>load-data.R</code>, <code>mtcars_measurements.csv</code>
-</li>
-</ul></li>
+<li>For code, use nouns for objects and verbs for actions:<ul><li>e.g. <code>load-data.R</code>, <code>mtcars_measurements.csv</code>
+</li></ul></li>
 </ul></li>
 <li>
 <p>Using Default Ordering</p>
-<ul><li>Files are usually sorted alphabetically
-<ul><li>we can make use of this!</li>
-</ul></li>
-<li>Left-pad with numbers to order files:
-<ul><li>e.g. <code>01_load-data.R</code>, <code>02_process-data.R</code>
-</li>
-</ul></li>
-<li>Use ISO-8601 for dates:
-<ul><li>
-<code>YYYY-MM-DD</code> format (when files are sorted alphabetically, this format makes the order chronological, too!)</li>
-</ul></li>
+<ul><li>Files are usually sorted alphabetically<ul><li>we can make use of this!</li></ul></li>
+<li>Left-pad with numbers to order files:<ul><li>e.g. <code>01_load-data.R</code>, <code>02_process-data.R</code>
+</li></ul></li>
+<li>Use ISO-8601 for dates:<ul><li>
+<code>YYYY-MM-DD</code> format (when files are sorted alphabetically, this format makes the order chronological, too!)</li></ul></li>
 </ul></li>
 <li>
 <p>Example</p>
@@ -218,32 +188,24 @@ siteB_2020-04-01_animal-count.xls
 siteB_2020-04-01_weather.dat
 siteB_2020-05-01_animal-count.xls
 siteB_2020-05-01_weather.dat</code></pre>
-<ul><li>files are organized by site
-<ul><li>dates of data collection are visible</li>
+<ul><li>files are organized by site<ul><li>dates of data collection are visible</li>
 <li>for a given site and date, types of measurement are clear</li>
-</ul></li>
-</ul></li>
+</ul></li></ul></li>
 <li>
 <p>Summary</p>
-<ul><li>you probably use names to organize files already!
-<ul><li>these tips are intended to help improve your system</li>
-</ul></li>
-<li>use a consistent scheme within each folder
-<ul><li>use subfolders to help separate files with different purposes</li>
-</ul></li>
+<ul><li>you probably use names to organize files already!<ul><li>these tips are intended to help improve your system</li></ul></li>
+<li>use a consistent scheme within each folder<ul><li>use subfolders to help separate files with different purposes</li></ul></li>
 </ul></li>
 </ul></div>
 <div class="section level2">
 <h2 id="structuring-tabular-data">Structuring Tabular Data<a class="anchor" aria-label="anchor" href="#structuring-tabular-data"></a></h2>
 <ul><li>
 <p>Principles</p>
-<ul><li>Make it easy for anyone to work with your data:
-<ul><li>Structure data for analysis (i.e. “Tidy Data”)</li>
+<ul><li>Make it easy for anyone to work with your data:<ul><li>Structure data for analysis (i.e. “Tidy Data”)</li>
 <li>Don’t use spreadsheet-formatting to store data!</li>
 <li>Keep raw data raw</li>
 <li>Include a Data Dictionary</li>
-</ul></li>
-</ul></li>
+</ul></li></ul></li>
 <li>
 <p>Tidy Data</p>
 <ul><li>each column is a variable</li>
@@ -252,14 +214,10 @@ siteB_2020-05-01_weather.dat</code></pre>
 </ul></li>
 <li>
 <p>Common issues</p>
-<ul><li>data values are stored in column headers
-<ul><li>e.g. treatment values, dates of sampling</li>
-</ul></li>
+<ul><li>data values are stored in column headers<ul><li>e.g. treatment values, dates of sampling</li></ul></li>
 <li>multiple variables are stored in one column</li>
 <li>some variables are stored in rows in addition to columns</li>
-<li>“1 observational unit = 1 table” is violated
-<ul><li>e.g. subject info and samples are stored in one table instead of separate tables with shared identifiers</li>
-</ul></li>
+<li>“1 observational unit = 1 table” is violated<ul><li>e.g. subject info and samples are stored in one table instead of separate tables with shared identifiers</li></ul></li>
 </ul></li>
 <li>
 <p>Column Labels are Values</p>
@@ -359,35 +317,25 @@ siteB_2020-05-01_weather.dat</code></pre>
 </tr></tbody></table></li>
 <li>
 <p>Spreadsheet Formatting</p>
-<ul><li>prefer empty cells or <code>'NA'</code> for missing data
-<ul><li><em>be careful about <code>'NA'</code> for certain types of data (e.g. country code for “Namibia”)</em></li>
-</ul></li>
+<ul><li>prefer empty cells or <code>'NA'</code> for missing data<ul><li><em>be careful about <code>'NA'</code> for certain types of data (e.g. country code for “Namibia”)</em></li></ul></li>
 <li>do NOT space out data with empty rows/columns</li>
-<li>do NOT use text formatting (e.g. bold/italics) to store information
-<ul><li>conditional formatting can help visualize</li>
-</ul></li>
+<li>do NOT use text formatting (e.g. bold/italics) to store information<ul><li>conditional formatting can help visualize</li></ul></li>
 <li>Excel LOVES to convert data into a date format</li>
 </ul></li>
 <li><p>Spreadsheet Example <img src="spreadsheet_formatting.png" alt="Figure 10 from Broman &amp; Woo “Data Organization in Spreadsheets”, showing a data table with an outlier highlighted in red as an example of bad formatting, and then an alternative where the outlier status is encoded in its own column."></p></li>
 <li>
 <p>Raw Data</p>
-<ul><li>store raw data for reproducibility
-<ul><li>e.g. if analysis tools change (as in bioinformatics workflows)</li>
-</ul></li>
-<li>document processing steps in code or text
-<ul><li>someone else can see what processing was done, and reproduce it</li>
+<ul><li>store raw data for reproducibility<ul><li>e.g. if analysis tools change (as in bioinformatics workflows)</li></ul></li>
+<li>document processing steps in code or text<ul><li>someone else can see what processing was done, and reproduce it</li>
 <li>OpenRefine is a great tool for cleaning messy data (and records the steps for you)!</li>
 </ul></li>
 </ul></li>
 <li>
 <p>Data Dictionary</p>
-<ul><li>define your rows and columns are
-<ul><li>e.g. do rows correspond to:
-<ul><li>individual subjects</li>
+<ul><li>define your rows and columns are<ul><li>e.g. do rows correspond to:<ul><li>individual subjects</li>
 <li>OR data collection sessions</li>
 <li>OR individual samples from a measurement device</li>
-</ul></li>
-</ul></li>
+</ul></li></ul></li>
 <li>define codes, categories, acronyms</li>
 <li>define relationships between multiple tables</li>
 <li><a href="https://guides.uflib.ufl.edu/datamanagement/metadata" class="external-link">more detail on metadata</a></li>
@@ -440,9 +388,7 @@ siteB_2020-05-01_weather.dat</code></pre>
 <div class="section level2">
 <h2 id="thanks">Thanks<a class="anchor" aria-label="anchor" href="#thanks"></a></h2>
 <ul><li>Contact me for additional questions or consultation requests!</li>
-<li>Check back in on the libguide for more modules and contact info:
-<ul><li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li>
-</ul></li>
+<li>Check back in on the libguide for more modules and contact info:<ul><li><a href="https://guides.uflib.ufl.edu/reproducibility" class="external-link uri">https://guides.uflib.ufl.edu/reproducibility</a></li></ul></li>
 </ul></div>
 </div>
 
@@ -461,7 +407,7 @@ siteB_2020-05-01_weather.dat</code></pre>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
 </div>
 
       </footer></div>
