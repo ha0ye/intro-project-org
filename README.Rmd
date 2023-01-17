@@ -16,14 +16,14 @@ knitr::opts_chunk$set(
 ```{r, include = FALSE}
 
 lesson_title <- "Organizing Research Projects for Reproducibility"
-lesson_description <- "This lesson prepares researchers to manage the digital aspects of their projects to: be more efficient, collaborate more easily, and promote reproducibility. Attendees will gain an understanding of the principles and practices in project organization, file naming, and documenting their work."
+lesson_description <- "This lesson introduces researchers to the concept of reproducibility, souces of irreproducibility, and possible solutions. Instruction is provided in organizational practices for files and folders during the research process to enable researchers to: be more efficient, collaborate more easily, and promote reproducibility. Attendees will gain an understanding of the principles and practices in project organization, file naming, and documenting their work."
 lesson_keywords <- c("Open Educational Resources",
                      "Research Support Skills",
                      "Research Data Management", 
                      "Metadata", 
                      "Workshop", 
                      "Data")
-lesson_version <- "1.0.0"
+lesson_version <- "1.1.0"
 
 folder_name <- basename(usethis::proj_get())
 package_name <- gsub("-", ".", folder_name)
@@ -70,7 +70,9 @@ jsonlite::write_json(cite_data, ".zenodo.json",
 ## Learning Outcomes
 
 ```{r, include = FALSE}
-learning_outcomes <- c("implement recommended practices for file and folder organization in projects", 
+learning_outcomes <- c("describe sources of irreproducibility",
+                       "explain several solutions to improve reproducibility",
+                       "apply file and folder organization in research projects", 
                        "use and apply file naming conventions", 
                        "understand principles for documenting data and methods")
 outcomes_text <- paste0("* ", learning_outcomes, collapse = "\n")

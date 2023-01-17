@@ -1,13 +1,13 @@
 Package: intro.project.org
 Title: Organizing Research Projects for Reproducibility
-Version: 1.0.0
+Version: 1.1.0
 Authors@R: 
     person(given = "Hao",
            family = "Ye",
            role = c("aut", "cre"),
            email = "hao.ye@weecology.org",
            comment = c(ORCID = "0000-0002-8630-1458"))
-Description: This lesson prepares researchers to manage the digital aspects of their projects to: be more efficient, collaborate more easily, and promote reproducibility. Attendees will gain an understanding of the principles and practices in project organization, file naming, and documenting their work.
+Description: This lesson introduces researchers to the concept of reproducibility, souces of irreproducibility, and possible solutions. Instruction is provided in organizational practices for files and folders during the research process to enable researchers to: be more efficient, collaborate more easily, and promote reproducibility. Attendees will gain an understanding of the principles and practices in project organization, file naming, and documenting their work.
 License: CC BY 4.0
 Imports:
     dplyr, 
@@ -25,7 +25,9 @@ RoxygenNote: 7.1.0
 URL: https://github.com/ha0ye/intro-project-org
 Depends: 
     R (>= 2.10)
-learningOutcomes: * implement recommended practices for file and folder organization in projects
+learningOutcomes: * describe sources of irreproducibility
+ * explain several solutions to improve reproducibility
+ * apply file and folder organization in research projects
  * use and apply file naming conventions
  * understand principles for documenting data and methods
 X-schema.org-keywords: Open Educational Resources, Research Support Skills, Research Data Management, Metadata, Workshop, Data

@@ -12,17 +12,20 @@ workflow](https://github.com/ha0ye/intro-project-org/workflows/pkgdown/badge.svg
 
 ## Description
 
-This lesson prepares researchers to manage the digital aspects of their
-projects to: be more efficient, collaborate more easily, and promote
-reproducibility. Attendees will gain an understanding of the principles
-and practices in project organization, file naming, and documenting
-their work.
+This lesson introduces researchers to the concept of reproducibility,
+souces of irreproducibility, and possible solutions. Instruction is
+provided in organizational practices for files and folders during the
+research process to enable researchers to: be more efficient,
+collaborate more easily, and promote reproducibility. Attendees will
+gain an understanding of the principles and practices in project
+organization, file naming, and documenting their work.
 
 ## Learning Outcomes
 
 By the end of the workshop, participants will be able to:
 
--   implement recommended practices for file and folder organization in
-    projects
--   use and apply file naming conventions
--   understand principles for documenting data and methods
+- describe sources of irreproducibility
+- explain several solutions to improve reproducibility
+- apply file and folder organization in research projects
+- use and apply file naming conventions
+- understand principles for documenting data and methods
